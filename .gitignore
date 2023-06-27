@@ -6,3 +6,5 @@
 *.toc
 *.pdf
 *.log
+ifbtcc.out
+ifbtcc.synctex.gz
