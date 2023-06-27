@@ -1,0 +1,11 @@
+\begin{thebibliography}{\hspace{\parindent}}
+
+\bibitem[CONTRIBUTORS(2021)CONTRIBUTORS]{debian-handbook} CONTRIBUTORS, D.~H\@.
+  \textbf{AppArmor}. [Acessado em 24 de abril de 2023],
+  \url{https://debian-handbook.info/browse/pt-BR/stable/sect.apparmor.html}.
+
+\bibitem[SCHEEPERS(2020)SCHEEPERS]{kernelscheepers} SCHEEPERS, C\@.
+  \textbf{Linux Containers and Virtualization}: a kernel perspective. Berkeley,
+  CA: Apress, 2020.
+
+\end{thebibliography}

@@ -1,0 +1,16 @@
+\section{Bubblewrap}
+
+ Ferramenta de sandboxing amplamente utilizada no ecossistema Linux. Ele fornece um ambiente seguro e isolado para a execução de aplicativos, permitindo que eles operem com um nível mínimo de privilégios e restrições de acesso. O Bubblewrap baseia-se em recursos avançados do kernel do Linux, como namespaces e cgroups, para oferecer isolamento de processos e limitação de acesso.
+
+\subsubsection{Isolamento de processos}
+O isolamento de processos é uma das principais funcionalidades do Bubblewrap. Ele cria um ambiente separado para a execução de aplicativos, isolando-os uns dos outros e do sistema operacional hospedeiro. Cada aplicativo em execução dentro do sandbox do Bubblewrap é encapsulado em seu próprio conjunto de namespaces, incluindo namespaces de processo, rede, sistema de arquivos e hostname. Isso impede que os processos dentro do sandbox afetem outros processos ou acessem recursos do sistema não autorizados.
+
+
+\subsection{Limitação de acesso}
+A limitação de acesso é outra característica fundamental do Bubblewrap. Ele permite que os administradores configurem políticas de segurança detalhadas para restringir o acesso dos aplicativos a recursos específicos do sistema. Por exemplo, é possível limitar o acesso a arquivos, diretórios, dispositivos, sockets de rede e outros recursos essenciais. Essa abordagem granular ajuda a evitar que aplicativos comprometidos acessem dados sensíveis ou executem operações indesejadas.
+
+ Sendo amplamente utilizado em diferentes cenários. É uma parte essencial do ecossistema de empacotamento de aplicativos Flatpak, permitindo que os aplicativos sejam executados em um ambiente seguro e isolado. É bastante utilizado em outras tecnologias de empacotamento, como o Snap, para garantir a segurança e o isolamento de aplicativos. Ele também pode ser usado para criar ambientes de teste isolados, facilitando a execução de aplicativos sem risco de impacto no sistema operacional hospedeiro.
+
+\subsection{Exemplo}
+
+Um exemplo prático do uso do Bubblewrap é a execução de um navegador da web em um sandbox. Ao executar o navegador dentro de um sandbox do Bubblewrap, é possível limitar seu acesso ao sistema de arquivos, restringir permissões de rede e impedir que ele acesse informações confidenciais. Isso aumenta a segurança, reduzindo a superfície de ataque em caso de exploração de vulnerabilidades do navegador.

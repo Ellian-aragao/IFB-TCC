@@ -1,0 +1,21 @@
+\chapter{Referencial teórico}
+
+Como base do conteúdo a ser referenciado dentro deste trabalho, existem diversas tecnologias e conceitos que são de fundamental importância a compreensão de modo que seja entendido desde os comparativos a de fato como as ferramentas a serem tratadas funcionam e interagem com o kernel Linux. Diante disto, temos a seguir alguns conceitos a serem expostos de modo a clarificar a sua importância e a base das ferramentas a serem tratadas, nestas temos namespaces e cgroups como os conceitos mais importantes e utilizados diante de todos os softwares a serem comentados posteriormente.
+
+\section{Namespace}
+A tecnologia consiste em fazer o isolamento dos recursos a serem utilizados por determinado software que esteja rodando. Deste modo o namespace é uma camada de interação que se encontra entre a sua execução propriamente dita e sua interação com kernel, tal como um proxy \cite{kernelscheepers}.
+
+Como comentado, esta camada que encontra-se entre o processo e o kernel, atua quando determinado software executa uma syscall (chamada de sistema) e as estruturas do processo, possuem os dados de determinado namespace, este que por sua vez delimita que recursos estão disponíveis para serem utilizados.
+
+Desta forma cria-se uma virtualização dos recursos que são disponíveis e quais são eles, uma vez que a resposta para o software a ser executada é dada pelas configurações daquele namespace sob o qual a aplicação roda. Sendo esta a base para criação de containers, dos quais trata-se de um processo o qual roda de maneira isolada sob um sistema operacional.
+
+Por fim, uma vez compreendida sua função, é necessário a compreensão de quais tipos de namespaces estão disponíveis uma vez que utilize-se o kernel posterior 5.6 do linux.
+
+\section{Cgroups}
+O controle de grupos, também chamado de cgroups, é a ferramenta para controle de uso do recurso, sendo esses de alguns tipos diferentes, mas em seu cerne trata-se de controle de quantidade de uso deste, ou seja quanto tempo ou banda de utilização de determinado recurso estaria liberado para um determinado processo do qual se encontra sob aquele cgroup.
+
+Compreendido que se trata do uso de recurso, aqueles que estão sob controle de determinado grupo, pode-se limitar o uso da CPU e utilização de blocos de I/O (entrada e saída de dados). Deste modo pode-se determinar quanto tempo de processamento está disponível e/ou quantos bytes estão disponíveis na entrada e saída do processo, seja ela utilização de rede (internet), escrita e leitura de arquivos, etc...
+
+\section{Containers}
+
+\section{Virtualização}

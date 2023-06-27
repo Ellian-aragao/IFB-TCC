@@ -1,0 +1,72 @@
+This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: ifbtcc.aux
+A level-1 auxiliary file: text/introduction.aux
+A level-1 auxiliary file: text/desenv.aux
+A level-1 auxiliary file: text/conclusion.aux
+The style file: ifbclass/libs/abnt.bst
+A level-1 auxiliary file: appendix/mapping-study.aux
+Database file #1: bib/references.bib
+Warning--I didn't find a database entry for "swebok2004"
+Warning--I didn't find a database entry for "Eastwood1993"
+Warning--I didn't find a database entry for "Erlikh2000"
+Warning--I didn't find a database entry for "Lehman1980"
+Warning--I didn't find a database entry for "Bennett2000"
+Warning--I didn't find a database entry for "Bertram2010"
+Warning--I didn't find a database entry for "CavalcantiSQJ2011"
+Warning--I didn't find a database entry for "Mantis"
+Warning--I didn't find a database entry for "Bugzilla"
+Warning--I didn't find a database entry for "Trac"
+Warning--I didn't find a database entry for "Aljarah2011"
+Warning--I didn't find a database entry for "Hosseini2012"
+Warning--I didn't find a database entry for "Kagdi2012"
+Warning--I didn't find a database entry for "Lucca2002"
+Warning--I didn't find a database entry for "Anvik2006"
+Warning--I didn't find a database entry for "Jeong2009"
+Warning--I didn't find a database entry for "Brooks1995"
+Warning--I didn't find a database entry for "Hesse-Biber2010"
+Warning--I didn't find a database entry for "Rahman2009"
+Warning--I didn't find a database entry for "CavalcantiEASE2013"
+Warning--I didn't find a database entry for "CavalcantiJSEP2013"
+You've used 2 entries,
+            2371 wiz_defined-function locations,
+            632 strings with 4983 characters,
+and the built_in function-call counts, 1316 in all, are:
+= -- 132
+> -- 6
+< -- 20
++ -- 73
+- -- 2
+* -- 67
+:= -- 113
+add.period$ -- 7
+call.type$ -- 2
+change.case$ -- 14
+chr.to.int$ -- 0
+cite$ -- 2
+duplicate$ -- 167
+empty$ -- 80
+format.name$ -- 14
+if$ -- 281
+int.to.chr$ -- 0
+int.to.str$ -- 0
+missing$ -- 0
+newline$ -- 7
+num.names$ -- 10
+pop$ -- 32
+preamble$ -- 1
+purify$ -- 2
+quote$ -- 0
+skip$ -- 78
+stack$ -- 0
+substring$ -- 65
+swap$ -- 107
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 18
+warning$ -- 0
+while$ -- 12
+width$ -- 0
+write$ -- 4
+(There were 21 warnings)
