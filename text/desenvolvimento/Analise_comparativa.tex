@@ -1,1 +1,28 @@
-\chapter{Analise Comparativa}
+\chapter{Análise Comparativa}
+
+ Nesta etapa examinaremos as principais ferramentas de sandboxing disponíveis no ambiente Linux. Considerando os seguintes aspectos: namespaces, cgroups e o papel do kernel. As ferramentas abordadas são AppArmor, Bubblewrap, Docker, Firejail, LXC, OpenVZ, Podman e Seccomp, já previamente apresentadas no capítulo \ref{charpter:Ferramentas de Sandboxing}. Vamos explorar como cada ferramenta utiliza esses recursos e como eles contribuem para o isolamento e a segurança dos processos.
+
+    AppArmor: O AppArmor utiliza namespaces para isolar o acesso a recursos do sistema, como arquivos, rede e processos. Ele permite definir políticas de segurança granulares para cada processo, restringindo suas ações.
+
+    Bubblewrap: O Bubblewrap também faz uso dos namespaces para fornecer isolamento seguro entre processos. Ele cria namespaces para sistemas de arquivos, processos e rede, garantindo que cada sandbox tenha seu próprio ambiente isolado.
+
+    Docker e Podman: Tanto o Docker quanto o Podman utilizam namespaces para isolar processos, sistemas de arquivos e redes. Eles fornecem ambientes isolados para a execução de contêineres, garantindo que cada contêiner tenha seu próprio espaço isolado.
+
+    Firejail: O Firejail usa namespaces para isolar processos, sistemas de arquivos e redes. Ele permite que aplicativos sejam executados em um ambiente sandbox, restringindo seu acesso a recursos não autorizados.
+
+    LXC e OpenVZ: O LXC e o OpenVZ são ferramentas de virtualização baseadas em contêineres que utilizam namespaces para fornecer isolamento entre os contêineres. Eles criam ambientes virtuais isolados, garantindo que cada contêiner tenha seu próprio espaço de sistema de arquivos, processos e rede.
+
+    Docker e Podman: Ambas as ferramentas suportam o uso de cgroups para controlar e limitar o uso de CPU, memória, E/S e outros recursos pelos contêineres. Isso ajuda a evitar que um contêiner monopolize os recursos do sistema.
+
+    Firejail: O Firejail utiliza cgroups para limitar os recursos disponíveis para os aplicativos em execução. Isso ajuda a evitar o consumo excessivo de recursos e a garantir a estabilidade do sistema.
+
+    LXC e OpenVZ: O LXC e o OpenVZ fazem amplo uso dos cgroups para controlar e limitar o uso de recursos pelos contêineres. Isso inclui limites de CPU, memória, rede e outros recursos, permitindo um gerenciamento preciso dos recursos alocados.
+
+    Seccomp: O Seccomp é uma funcionalidade do kernel Linux que permite restringir as chamadas de sistema disponíveis para um processo. Ele é usado por várias ferramentas de sandboxing, incluindo Docker, Podman e Firejail, para reduzir a superfície de ataque e aumentar a segurança do sistema.
+
+    Outras ferramentas: As demais ferramentas mencionadas não têm um vínculo direto com o kernel Linux além do uso de namespaces e cgroups, que são recursos fornecidos pelo próprio kernel.
+
+\section{Conclusão}:
+As ferramentas de sandboxing analisadas neste TCC apresentam abordagens distintas para o isolamento de processos e a limitação de acesso em ambientes Linux. O uso de namespaces e cgroups é comum em todas as ferramentas, permitindo criar ambientes isolados e controlar o uso de recursos. Algumas ferramentas, como Docker, Podman e Firejail, também se beneficiam do recurso Seccomp para restringir as chamadas de sistema. A escolha da ferramenta adequada dependerá dos requisitos específicos de cada caso, levando em consideração fatores como segurança, simplicidade, compatibilidade e recursos necessários. É recomendado realizar testes e avaliações para selecionar a ferramenta mais adequada para cada cenário.
+
+falta concluir melhor aplicabilidade da ferramenta

@@ -511,7 +511,7 @@ requirements for the degree of \@degree\ in \@majorfielden.
 
 %% Fonts
 
-% \newcommand\quotefont{\normalfont\normalsize}
+\newcommand\quotefont{\normalfont\normalsize}
 \newcommand\quotefonti{\it\normalsize}
 
 
