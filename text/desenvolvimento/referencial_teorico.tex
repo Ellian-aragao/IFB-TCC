@@ -1,8 +1,22 @@
 \chapter{Referencial teórico}
 
-Como base do conteúdo a ser referenciado dentro deste trabalho, existem diversas tecnologias e conceitos que são de fundamental importância a compreensão de modo que seja entendido desde os comparativos a de fato como as ferramentas a serem tratadas funcionam e interagem com o kernel Linux. Diante disto, temos a seguir alguns conceitos a serem expostos de modo a clarificar a sua importância e a base das ferramentas a serem tratadas, nestas temos namespaces e cgroups como os conceitos mais importantes e utilizados diante de todos os softwares a serem comentados posteriormente.
+Como base do conteúdo a ser referenciado dentro deste trabalho, existem diversas tecnologias e conceitos que são de fundamental importância a compreensão, de modo que seja entendido desde os comparativos a de fato como as ferramentas a serem tratadas funcionam e interagem com o kernel Linux.
+
+Diante disto, temos a seguir alguns conceitos a serem expostos de modo a clarificar a sua importância e a base das ferramentas a serem tratadas, nestas temos namespaces e cgroups como os conceitos mais importantes e utilizados diante de todos os softwares a serem comentados posteriormente.
+
+\section{Virtualização}
+Como base do sandbox, temos conceitos como virtualização do qual faz a base para sua implementação, este é feito através do isolamento de recursos, sejam estes limitações quanto operações, quanto quantidade de recursos. A forma de fazer isto é através da virtualização destes recursos de modo que funcione como um proxy para o acesso aos recursos de forma real.
+
+Quanto virtualização, temos desde utilização de uma virtualização completa dos recursos, quanto limitar os recursos, mas sua base gira em torno de um sistema agir de modo intermediário ao hardware e definir quais seriam os recursos que estariam disponíveis para determinado programa ou Sistema Operacional (SO).
+
+A categorização do tipo de virtualização em alto nível, gira em torno da virtualização completa e a conteinerização. 
+
+Quanto a isto temos a virtualização completa de um sistema, através de SO que age como intermediário aos recursos, a estes sendo denominados como hypervisors, uma camada de abstração aos recursos reais de hardware a serem providos no sistema. Sendo assim, temos um dispositivo de armazenamento o qual interage diretamente com o hypervisor, e um driver virtual do qual é utilizado pela maquina virtual (MV) para interagir com o dispositivo de armazenamento virtual, que o hypervisor cria para o dispositivo de armazenamento real.
+
+Já na conteinerização, o processo é mais simples por disponibilidade de alguns recursos providos pelo GNU/Linux, os quais são os Namespaces e cgroups, que possibilitam gerenciar acesso e uso de recursos sem utilização de muitas abstrações tais como uma MV, assim sendo compreendido que a conteinerização é utilização de uma MV leve. Mais a respeito pode ser visto no tópico \ref{chp:referencial_teorico::sct:containers}.
 
 \section{Namespace}
+\label{chp:referencial_teorico::sct:namespace}
 A tecnologia consiste em fazer o isolamento dos recursos a serem utilizados por determinado software que esteja rodando. Deste modo o namespace é uma camada de interação que se encontra entre a sua execução propriamente dita e sua interação com kernel, tal como um proxy \cite{kernelscheepers}.
 
 Como comentado, esta camada que encontra-se entre o processo e o kernel, atua quando determinado software executa uma syscall (chamada de sistema) e as estruturas do processo, possuem os dados de determinado namespace, este que por sua vez delimita que recursos estão disponíveis para serem utilizados.
@@ -12,12 +26,13 @@ Desta forma cria-se uma virtualização dos recursos que são disponíveis e qua
 Por fim, uma vez compreendida sua função, é necessário a compreensão de quais tipos de namespaces estão disponíveis uma vez que utilize-se o kernel posterior 5.6 do linux.
 
 \section{Cgroups}
+\label{chp:referencial_teorico::sct:cgroup}
 O controle de grupos, também chamado de cgroups, é a ferramenta para controle de uso do recurso, sendo esses de alguns tipos diferentes, mas em seu cerne trata-se de controle de quantidade de uso deste, ou seja quanto tempo ou banda de utilização de determinado recurso estaria liberado para um determinado processo do qual se encontra sob aquele cgroup.
 
 Compreendido que se trata do uso de recurso, aqueles que estão sob controle de determinado grupo, pode-se limitar o uso da CPU e utilização de blocos de I/O (entrada e saída de dados). Deste modo pode-se determinar quanto tempo de processamento está disponível e/ou quantos bytes estão disponíveis na entrada e saída do processo, seja ela utilização de rede (internet), escrita e leitura de arquivos, etc...
 
 \section{Containers}
-falar sobre layer composition?
+\label{chp:referencial_teorico::sct:containers}
+Quanto o conceito de containers, o conceito gira em torno de fazer o isolamento dos recursos dentro de um runtime o qual existe a percepção de que o o sistema operacional, processos, e recursos disponíveis estão a disposição de um processo do qual desconhece que está rodando dentro deste ambiente, de modo o qual não possui contato algum com o sistema operacional o qual de fato está rodando todos os processos necessários para tal \cite{what-container}, \cite{what-are-container}.
 
-\section{Virtualização}
-validar se está sendo analisada ferramenta de virtualização ou descartar tópico
+Isso é possível através dos recursos providos pelo GNU/Linux, sendo estes namespaces \ref{chp:referencial_teorico::sct:namespace} e cgroups \ref{chp:referencial_teorico::sct:cgroup}. O isolamento provido pelos namespaces e a limitação de uso de recursos provido pelo cgroups, possibilita a existência de containers e incrementos que são feitos sob toda esta base de isolamento.
