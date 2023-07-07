@@ -2,12 +2,19 @@
 
 O Docker é uma plataforma de software que permite aos desenvolvedores criar, implantar e executar aplicativos em contêineres. O principal objetivo do Docker é facilitar a implantação e o gerenciamento de aplicativos, fornecendo um ambiente consistente e isolado para sua execução.
 
-Uma das características distintas do Docker é a sua abordagem baseada em contêineres. Um contêiner é uma unidade de software que encapsula um aplicativo e todas as suas dependências, incluindo bibliotecas, frameworks e arquivos de configuração. Diferentemente das máquinas virtuais tradicionais, os contêineres compartilham o mesmo kernel do sistema operacional hospedeiro, o que os torna mais leves e eficientes.
+\section{Contêiners}
+ 
+ Um contêiner é uma unidade de software que encapsula um aplicativo e todas as suas dependências, incluindo bibliotecas, frameworks e arquivos de configuração. Diferentemente das máquinas virtuais tradicionais, os contêineres compartilham o mesmo kernel do sistema operacional hospedeiro, o que os torna mais leves e eficientes.
 
+\section{Portabilidade}
 A portabilidade é outra característica-chave do Docker. Os contêineres Docker são independentes da plataforma e podem ser executados em qualquer ambiente que tenha o Docker instalado, seja localmente em um computador de desenvolvimento ou em um ambiente de nuvem como o AWS, Google Cloud Platform ou Microsoft Azure. Isso facilita a implantação consistente de aplicativos em diferentes ambientes, eliminando problemas de compatibilidade.
 
-O Docker oferece um modelo de implantação e gerenciamento baseado em imagens. Uma imagem Docker é uma representação estática de um contêiner, contendo todas as dependências e configurações necessárias. As imagens são criadas usando arquivos de configuração chamados Dockerfiles, que descrevem os passos para configurar o ambiente do contêiner. Isso torna a criação e o compartilhamento de aplicativos e suas dependências mais fáceis e reproduzíveis.
+\section{Gerenciamento de imagens}
 
-A escalabilidade é outra vantagem do Docker. Com o Docker Swarm ou o Kubernetes, é possível implantar aplicativos em clusters de máquinas, permitindo a execução de várias réplicas de um aplicativo para lidar com altas cargas de tráfego. Essa capacidade de escalabilidade horizontal ajuda a garantir a disponibilidade e o desempenho de aplicativos em ambientes de produção.
+Uma imagem Docker é uma representação estática de um contêiner, contendo todas as dependências e configurações necessárias. As imagens são criadas usando arquivos de configuração chamados Dockerfiles, que descrevem os passos para configurar o ambiente do contêiner. Isso torna a criação e o compartilhamento de aplicativos e suas dependências mais fáceis e reproduzíveis.
 
-O Docker também oferece recursos avançados de rede, permitindo a criação de redes virtuais isoladas para os contêineres. Isso possibilita a comunicação segura entre contêineres, bem como a exposição controlada de portas para comunicação com o mundo externo.
+\section{Escalabilidade}
+
+Com o Docker Swarm ou o Kubernetes, é possível implantar aplicativos em clusters de máquinas, permitindo a execução de várias réplicas de um aplicativo para lidar com altas cargas de tráfego. Essa capacidade de escalabilidade horizontal ajuda a garantir a disponibilidade e o desempenho de aplicativos em ambientes de produção.
+
+Permitindo a criação de redes virtuais isoladas para os contêineres. Isso possibilita a comunicação segura entre contêineres, bem como a exposição controlada de portas para comunicação com o mundo externo.

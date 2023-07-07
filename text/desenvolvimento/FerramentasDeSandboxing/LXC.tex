@@ -2,12 +2,16 @@
 
 O LXC (Linux Containers) é uma tecnologia de virtualização baseada em contêineres que permite a execução de múltiplos ambientes isolados em um único sistema Linux. Ele oferece uma abordagem leve e eficiente para virtualização, fornecendo uma alternativa às máquinas virtuais tradicionais.
 
+\subsection{Gerenciar contêineres}
 Uma das principais características do LXC é a sua capacidade de criar e gerenciar contêineres Linux completos. Cada contêiner LXC possui seu próprio ambiente isolado, incluindo sistema operacional, bibliotecas, aplicativos e recursos alocados, mas compartilha o mesmo kernel do sistema operacional hospedeiro. Essa abordagem compartilhada resulta em um melhor desempenho e utilização de recursos em comparação com a virtualização completa.
 
 O LXC oferece um conjunto abrangente de ferramentas de linha de comando e APIs para criar e gerenciar contêineres. Ele permite que os administradores configurem e personalizem os recursos de cada contêiner, incluindo CPU, memória, armazenamento e rede. Isso proporciona um controle granular sobre a alocação de recursos e garante um compartilhamento justo entre os contêineres.
 
-Além disso, o LXC suporta o uso de tecnologias avançadas de isolamento, como cgroups e namespaces do kernel do Linux. Os cgroups permitem o controle e a limitação de recursos, como CPU, memória e E/S, para cada contêiner. Os namespaces isolam processos, rede, sistema de arquivos e outros recursos do sistema, garantindo que cada contêiner opere de forma independente e segura.
+\subsection{Isolamento}
+ Uso de tecnologias avançadas de isolamento, como cgroups e namespaces do kernel do Linux. Os cgroups permitem o controle e a limitação de recursos, como CPU, memória e E/S, para cada contêiner. Os namespaces isolam processos, rede, sistema de arquivos e outros recursos do sistema, garantindo que cada contêiner opere de forma independente e segura.
 
-O LXC é altamente flexível e escalável. Ele pode ser usado em uma variedade de cenários, desde a execução de aplicativos individuais em contêineres isolados até a criação de ambientes de teste e desenvolvimento completos. Sua flexibilidade também o torna uma escolha popular para implantação em nuvem, permitindo a rápida criação e destruição de contêineres em escala.
+\subsection{Flexível e escalável}
+ Pode ser usado em uma variedade de cenários, desde a execução de aplicativos individuais em contêineres isolados até a criação de ambientes de teste e desenvolvimento completos. Sua flexibilidade também o torna uma escolha popular para implantação em nuvem, permitindo a rápida criação e destruição de contêineres em escala.
 
-Outra vantagem do LXC é a sua integração com outras tecnologias, como o Docker e o Kubernetes. O LXC pode ser usado como uma das opções de execução para contêineres Docker, fornecendo um ambiente isolado para a execução de aplicativos Docker. Além disso, o LXC pode ser usado como o mecanismo de execução subjacente para clusters Kubernetes, permitindo a orquestração e gerenciamento de contêineres em escala.
+\subsection{Integração}
+  Como o Docker e o Kubernetes. O LXC pode ser usado como uma das opções de execução para contêineres Docker, fornecendo um ambiente isolado para a execução de aplicativos Docker. Além disso, o LXC pode ser usado como o mecanismo de execução subjacente para clusters Kubernetes, permitindo a orquestração e gerenciamento de contêineres em escala.

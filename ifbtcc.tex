@@ -1,4 +1,4 @@
-%% IFBTcc Latex Template Version
+t%% IFBTcc Latex Template Version
 %% 	based on a fork of : RiSE Latex Template
 %%
 %% IFBthesis latex template for thesis and dissertations
@@ -117,7 +117,7 @@
   \date{2023}
   
   \author{Ellian Aragão Dias, João Vitor Souza Rezende}
-  \adviser{Daniel Saad}
+  \adviser{Prof. Dr. Daniel Saad Nogueira Nunes}
   % \coadviser{Nome completo do co-orientador }
   
   % Macros (defines your own macros here, if needed)
@@ -138,14 +138,14 @@
   
   \banca
   
-  \begin{dedicatory}
-  Obrigado a todos que acreditaram que eu poderia ser um belo garoto de programa
-  \end{dedicatory}
+  % \begin{dedicatory}
+  % Obrigado a todos que acreditaram que eu poderia ser um belo garoto de programa
+  % \end{dedicatory}
   
   \acknowledgements
-  \input{text/agradecimentos}
+  % \input{text/agradecimentos}
   
-  \begin{epigraph}[]{Mark Kennedy}
+  \begin{epigraph}{Mark Kennedy}
   Todas as maiores invenções tecnológicas criadas pelo homem — o avião, o automóvel, o computador — dizem pouco sobre sua inteligência, mas falam bastante sobre sua preguiça
   \end{epigraph}
   
@@ -183,7 +183,14 @@
   \include{text/introducao}
   \include{text/objetivo}
   \include{text/desenvolvimento}
-  \include{text/conclusao}
+  
+  {\parindent0pt
+    \input{text/cronograma}
+  }
+
+  {\parindent0pt
+    \input{text/conclusao}
+  }
   
   % References
   
@@ -196,4 +203,3 @@
   % \include{appendix/mapping-study}
   
   \end{document}
-  

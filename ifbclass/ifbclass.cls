@@ -661,24 +661,15 @@ requirements for the degree of \@degree\ in \@majorfielden.
 
   \begin{center}
 
+  \vspace{\baselineskip}
   -----------------------------------------------------------------------\\
-  Prof. Fabiano Cavalcanti Fernandes\\
+  Prof. Dr. Fabiano Cavalcanti Fernandes \\
   Computação/IFB
 
   \vspace{\baselineskip}
   -----------------------------------------------------------------------\\
-  Prof. Leandro Vaguetti \\
-  Computação/IFB
-
-  \vspace{\baselineskip}
-  -----------------------------------------------------------------------\\
-  Prof. Roberto Duarte Fontes\\
-  Computação/IFB
-
-  \vspace{\baselineskip}
-  -----------------------------------------------------------------------\\
-  Prof. Raimundo Cláudio da Silva Vasconcelos\\
-  Computação/IFB
+  Prof. Dr. Bruno César Ribas \\
+  UnB/FGA
 
   \vspace{\baselineskip}
   -----------------------------------------------------------------------\\

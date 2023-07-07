@@ -2,12 +2,16 @@
 
 O OpenVZ é uma plataforma de virtualização de sistema operacional que permite a criação de ambientes virtuais isolados, chamados de "contêineres", em um único servidor físico. Essa tecnologia oferece uma abordagem eficiente e escalável para virtualização, permitindo a execução de múltiplos sistemas operacionais em um único host.
 
-Uma das características principais do OpenVZ é sua eficiência e baixa sobrecarga. Ao contrário das soluções de virtualização completa, onde cada máquina virtual (VM) executa seu próprio kernel do sistema operacional, o OpenVZ compartilha um único kernel entre os contêineres. Essa abordagem compartilhada resulta em um melhor desempenho e eficiência, com menor utilização de recursos, uma vez que os contêineres não precisam carregar um sistema operacional completo.
+\subsection{Eficiência e baixa sobrecarga}
+ Ao contrário das soluções de virtualização completa, onde cada máquina virtual (VM) executa seu próprio kernel do sistema operacional, o OpenVZ compartilha um único kernel entre os contêineres. Essa abordagem compartilhada resulta em um melhor desempenho e eficiência, com menor utilização de recursos, uma vez que os contêineres não precisam carregar um sistema operacional completo.
 
-O OpenVZ oferece isolamento avançado entre os contêineres. Cada contêiner é completamente isolado, com seu próprio sistema de arquivos, processos, rede e recursos alocados, proporcionando um ambiente seguro e protegido. O isolamento impede que os contêineres afetem uns aos outros e permite que cada contêiner opere independentemente, como se fosse uma instância virtualizada separada.
+\subsection{Isolamento avançado}
+Cada contêiner é completamente isolado, com seu próprio sistema de arquivos, processos, rede e recursos alocados, proporcionando um ambiente seguro e protegido. O isolamento impede que os contêineres afetem uns aos outros e permite que cada contêiner opere independentemente, como se fosse uma instância virtualizada separada.
 
 Além disso, o OpenVZ fornece recursos avançados de gerenciamento de recursos. Os recursos, como CPU, memória e espaço em disco, podem ser alocados e limitados de forma granular para cada contêiner. Isso permite um controle preciso e equilibrado do uso de recursos, garantindo que nenhum contêiner monopolize os recursos do sistema.
 
-A escalabilidade é outra característica chave do OpenVZ. É possível criar e gerenciar facilmente um grande número de contêineres em um único servidor físico. Essa capacidade de dimensionamento horizontal permite que os administradores maximizem a utilização dos recursos e implantem aplicativos em escala, atendendo a demandas crescentes.
+\subsection{Escalabilidade}
+Sendo possível criar e gerenciar facilmente um grande número de contêineres em um único servidor físico, essa capacidade de dimensionamento horizontal permite que os administradores maximizem a utilização dos recursos e implantem aplicativos em escala, atendendo a demandas crescentes.
 
-O OpenVZ também oferece ferramentas de gerenciamento e monitoramento abrangentes para facilitar a administração dos contêineres. Existem interfaces de linha de comando e interfaces gráficas disponíveis para gerenciar, monitorar e fazer ajustes nos contêineres.
+\subsection{Gerenciamento e monitoramento abrangentes}
+ Criação trazendo  facilitação para uma administração dos contêineres, existindo interfaces de linha de comando e interfaces gráficas disponíveis para gerenciar, monitorar e fazer ajustes nos contêineres.

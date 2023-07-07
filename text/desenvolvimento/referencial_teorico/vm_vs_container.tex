@@ -1,0 +1,19 @@
+\begin{tabular}{|c|p{5cm}|p{5cm}|}
+\hline
+\textbf{Parametro} & \textbf{Máquina Virtual} & \textbf{Container} \\
+\hline
+OS convidado    & Roda sobre hardware virtual e kernel é carregado em sua própria região de memória & Todos os convidados compartilham o mesmo kernel, e a imagem do kernel é carregado na memória física \\
+\hline
+Comunicação     & Será feita através de dispositivos de rede & Mecanismos padrões de IPC, como sinais, pipes, sockets, etc \\
+\hline
+Segurança       & Depende da implementação do Hypervisor & Mecanismos de controle do kernel \\
+\hline
+Performance     & Sofre do overhead das instruções a serem traduzidas do convidado para o host & Provém uma performance quase nativa \\
+\hline
+Isolamento      & Bibliotecas compartilhadas, arquivos e etc, não podem ser compartilhados entre convidado e host & Subdiretórios podem ser montados e compartilhados entre host e container \\
+\hline
+Tempo de inicio & Precisam de alguns minutos para iniciar  &  Podem ser iniciados em segundos \\
+\hline
+Armazenamento  & Precisa de muito armazenamento para seu kernel, programas e dependências &  Ocupam menos espaço uma vez que o kernel é compartilhado \\
+\hline
+\end{tabular}

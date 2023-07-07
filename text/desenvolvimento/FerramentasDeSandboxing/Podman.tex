@@ -2,12 +2,17 @@
 
 O Podman é uma ferramenta de gerenciamento de contêineres de código aberto que permite a criação, execução e gerenciamento de contêineres no ecossistema Linux. Ele é projetado para ser uma alternativa ao Docker, fornecendo recursos semelhantes enquanto se concentra em segurança, simplicidade e compatibilidade com o padrão Open Container Initiative (OCI).
 
-Uma das principais características do Podman é sua abordagem sem daemon. Ao contrário do Docker, que usa um daemon em execução em segundo plano, o Podman utiliza uma arquitetura sem daemon, executando os contêineres diretamente como processos no espaço de usuário. Isso resulta em um ambiente de execução mais seguro, eliminando a necessidade de um processo em execução em segundo plano com privilégios elevados.
 
+\subsection{Daemon}
+Ao contrário do Docker, que usa um daemon em execução em segundo plano, o Podman utiliza uma arquitetura sem daemon, executando os contêineres diretamente como processos no espaço de usuário. Isso resulta em um ambiente de execução mais seguro, eliminando a necessidade de um processo em execução em segundo plano com privilégios elevados.
+
+\subsection{Isolamento robusto}
 O Podman também oferece isolamento robusto de contêineres por meio do uso de namespaces e cgroups do kernel Linux. Ele permite a criação de contêineres isolados que possuem seu próprio ambiente de sistema de arquivos, processos, rede e outros recursos. Isso garante que os contêineres executados pelo Podman operem de forma independente, sem afetar uns aos outros ou o sistema operacional hospedeiro.
 
-Outra característica notável do Podman é sua compatibilidade com o padrão OCI. Isso significa que os contêineres criados com o Podman são compatíveis com outros sistemas de execução de contêineres que aderem ao mesmo padrão, como o Docker. Isso permite que os usuários compartilhem e distribuam contêineres facilmente entre diferentes ambientes e ferramentas compatíveis com OCI.
+\subsection{Padrão OCI}
+Significa que os contêineres criados com o Podman são compatíveis com outros sistemas de execução de contêineres que aderem ao mesmo padrão, como o Docker. Isso permite que os usuários compartilhem e distribuam contêineres facilmente entre diferentes ambientes e ferramentas compatíveis com OCI.
 
 O Podman fornece um conjunto abrangente de comandos de linha de comando que permitem a criação, execução e gerenciamento de contêineres. Ele suporta recursos avançados, como criação de redes virtuais, montagem de volumes, configuração de variáveis de ambiente e execução de comandos dentro de contêineres em execução. Isso oferece flexibilidade e controle aos usuários para personalizar e ajustar seus contêineres de acordo com suas necessidades.
 
-Além disso, o Podman oferece suporte a recursos de segurança, como o uso de SELinux para aplicar políticas de segurança e restrições adicionais nos contêineres. Ele também oferece recursos de gerenciamento de imagens e compartilhamento de contêineres através de registros e repositórios.
+\subsection{Segurança}
+ Podman oferece suporte a recursos de segurança, como o uso de SELinux para aplicar políticas de segurança e restrições adicionais nos contêineres. Ele também oferece recursos de gerenciamento de imagens e compartilhamento de contêineres através de registros e repositórios.
