@@ -1,16 +1,16 @@
 \section{Seccomp}
 
-O Seccomp é uma ferramenta de segurança avançada disponível no kernel do Linux que permite restringir as chamadas de sistema (system calls) disponíveis para um processo em execução. Sua principal finalidade é aumentar a segurança do sistema, limitando as possíveis vias de ataque que um aplicativo pode explorar.
+O Seccomp é uma ferramenta de segurança avançada disponível no kernel do Linux que permite restringir as chamadas de sistema (system calls) disponíveis para um processo em execução. Sua principal finalidade é aumentar a segurança do sistema, limitando as possíveis vias de ataque que um aplicativo pode explorar \cite{seccomp-filter-kernel}.
 
-\subsection{Filtração de processos}
+\paragraph*{Filtração de processos}\mbox{}\\
  Permite que os administradores ou desenvolvedores definam uma política de segurança, especificando quais chamadas de sistema são permitidas e quais devem ser bloqueadas. Isso reduz a superfície de ataque do aplicativo, pois impede que ele faça chamadas de sistema potencialmente perigosas ou desnecessárias.
 
 O Seccomp funciona usando um filtro BPF (Berkeley Packet Filter), que é um mecanismo de filtragem de pacotes flexível e eficiente. O filtro BPF é usado para especificar as regras do Seccomp, determinando quais chamadas de sistema são permitidas ou bloqueadas com base em critérios definidos. Essas regras podem ser aplicadas a um processo específico ou a um grupo de processos.
 
-\subsection{Ambiente de execução}
-Outra característica importante do Seccomp é sua capacidade de fornecer um ambiente de execução seguro para aplicativos não confiáveis ou suspeitos. Em ambientes de contêineres, o Seccomp pode ser usado para restringir as chamadas de sistema disponíveis para um contêiner, garantindo que ele não acesse recursos ou execute operações não autorizadas. Isso ajuda a mitigar o impacto de possíveis ataques e limita as ações que um aplicativo malicioso pode realizar.
+\paragraph*{Ambiente de execução}\mbox{}\\
+Outra característica importante do Seccomp é sua capacidade de fornecer um ambiente de execução seguro para aplicativos não confiáveis ou suspeitos. Em ambientes de contêineres, o Seccomp pode ser usado para restringir as chamadas de sistema disponíveis para um contêiner, garantindo que ele não acesse recursos ou execute operações não autorizadas. Isso ajuda a mitigar o impacto de possíveis ataques e limita as ações que um aplicativo malicioso pode realizar \cite{seccomp-filter-kernel}.
 
 Sendo altamente flexível e suporta diferentes níveis de filtragem pode ser usado tanto em modo de auditoria, apenas registrando as chamadas de sistema que seriam bloqueadas, quanto em modo de execução real, bloqueando efetivamente as chamadas de sistema não permitidas. Isso permite que os administradores escolham o nível de restrição mais adequado para suas necessidades de segurança.
 
-\subsection{Segurança}
+\paragraph*{Segurança}\mbox{}\\
 Amplamente utilizado em ambientes onde a segurança é uma prioridade, como contêineres, servidores web, sistemas embarcados e outros. Ao restringir as chamadas de sistema, ele ajuda a mitigar vulnerabilidades de segurança e limita as ações que um aplicativo comprometido pode realizar, aumentando a proteção do sistema como um todo.

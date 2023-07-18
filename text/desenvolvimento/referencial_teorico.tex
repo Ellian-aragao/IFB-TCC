@@ -3,48 +3,13 @@
 
 Como base do conteúdo a ser referenciado dentro deste trabalho, existem diversas tecnologias e conceitos que são de fundamental importância, de modo que seja entendido desde os comparativos das ferramentas a serem expostas e como interagem com o kernel. Assim temos a seguir os conceitos a serem tratados.
 
-\section{Virtualização}
-Como início desta sessão, vamos definir virtualização como uma entidade de software da qual representa um recurso real de hardware, mas não necessariamente representando todas as capacidades deste recurso de hardware, como exemplo, digamos que exista um processador que possua 8 núcleos e 16 threads, mas a virtualização deste recurso representa apenas 4 núcleos e 8 threads deste processador real.
-
-Desta forma, temos a virtualização como base do sandbox, sendo este feito através do isolamento de recursos, sejam estes limitações quanto operações, quanto quantidade de recursos.
-
-Portanto, a virtualização, dos recursos funciona como um proxy para o acesso aos recursos de forma real, assim possibilitando os controles e isolamentos previamente citados. Assim sua base gira em torno de um sistema agir de modo intermediário ao hardware e definir quais seriam os recursos que estariam disponíveis para determinado programa ou Sistema Operacional (SO).
-
-A categorização dos tipos de virtualização em alto nível, isto é sem entrar em muitos detalhes conceituais, gira em torno dos tipos de virtualização através de uma máquina virtual (MV) e a conteinerização.
-
-Temos a MV e esta precisa do hypervisor, uma camada de abstração aos recursos reais de hardware a serem providos no sistema. Como exemplo digamos que temos um dispositivo de armazenamento o qual interage diretamente com o hypervisor através de seus drivers, o hypervisor  gera um driver virtual do qual é utilizado dentro da MV para interagir com o SO convidado.
-
-Já na conteinerização, o processo é mais simples por disponibilidade de alguns recursos providos pelo GNU/Linux, os quais são os Namespaces e cgroups, que possibilitam gerenciar acesso e uso de recursos sem utilização de muitas abstrações utilizadas em uma MV (criação de um driver virtual). Além de todos os processos rodarem no mesmo SO, o qual pode ser verificado na máquina host como só mais um processo na árvore de processos, diferentemente de uma MV que aponta a existência de um único processo. Mais a respeito pode ser visto no tópico \ref{chp:referencial_teorico::sct:containers}.
-
-Em questão de comparação entre estes tipos de virtualização, MV e container, temos a seguinte tabela comparativa:
-
-\input{text/desenvolvimento/referencial_teorico/vm_vs_container}
 
 \section{Hypervisors}
-Em essência é um software especial para virtualização de SOs do qual cuida basicamente de 2 aspectos, a emulação de instruções privilegiadas, as quais apenas o SO instalado diretamente no hardware poderia fazer, e virtualização de dispositivos, estes sendo responsável por hardwares de entrada e saída de dados \cite{kernelscheepers}.
+Em essência é um software especial para virtualização de sistemas operacionais (SO), o qual cuida basicamente de 2 aspectos, a emulação de instruções privilegiadas, as quais apenas o SO instalado diretamente no hardware poderia fazer, e virtualização de dispositivos, estes sendo responsável por hardwares de entrada e saída de dados \cite{kernelscheepers}.
 
-CONSULTAR ARTIGOS SOBRE RINGS DO PROCESSADOR
+Assim atuando como um intermediário entre o hardware e os SOs podendo fazer o controle do uso dos recursos. Normalmente é utilizado para execução de sistemas feitos para uma arquitetura diferente do que o hardware suporta, isto é, um processador de arquitetura Risc executando um SO de arquitetura Cisc \cite{brief_history_qualcomm, what_are_qualcomm}.
 
-\section{Máquina Virtual (MV)}
-\label{chp:referencial_teorico::sct:maquina_virtual}
-O caso da máquina virtual, normalmente é utilizado visando rodar múltiplos SOs diferentes e até de arquiteturas diferentes. Seu uso implica na virtualização de todos os recursos providos pelo hardware e provimento de drivers virtuais para estes SOs. Possuindo em si algumas outras segmentações, tais como a virtualização de tipo 1 (bare-metal) e tipo 2 \cite{kernelscheepers, Virtualization_vs_Containerization}.
-
-Como visualização das diferenças entre os tipos de virtualização providos por MVs, temos a figura \ref{fig:virtualization_t1_vs_t2}.
-
-\begin{figure}
-    \centering
-    \includegraphics[width=8cm]{images/vm_t1_vs_t2.drawio.png}
-    \caption{Virtualização tipo 1 vs tipo 2}
-    \label{fig:virtualization_t1_vs_t2}
-\end{figure}
-
-\subsection{Tipo 1 - Bare-metal}
-No tipo de virtualização bare-metal, temos o hypervisor que cuida de todo o gerenciamento do recurso e distribuição dos mesmos para cada SO convidado. Possuem performance melhor em comparação ao tipo 2, uma vez que seu acesso intercede exclusivamente o hypervisor, assim rodando praticamente de forma nativa.
-
-A respeito deste tipo, o GNU/Linux implementa um módulo kernel-based virtualization machine (KVM), o qual resulta na capacidade de virtualização sobre este funcionar tal como um hypervisor. Deste modo, praticamente qualquer kernel Linux com este módulo pode ser utilizado tal como um hypervisor \cite{what-is-KVM}.
-
-\subsection{Tipo 2 - Hosted Hypervisor}
-Já no tipo 2, inicia-se um SO principal, e este através de virtualização de hardware e/ou tradução de interfaces binárias, possibilita o uso de recursos em um SO convidado. A comunicação do SO convidado com os recursos tende a ser mais demorada devido sua comunicação levar seu tempo de interpretação do SO principal, que por fim acessa o recurso solicitado, resultando assim em uma execução mais lenta quando comparado a virtualização tipo 1 bare-metal.
+Como exemplo temos o desenvolvimento mobile, em que a maioria dos dispositivos móveis possuem processadores do tipo Risc, como a Samsung e a Apple que utilizam arquitetura ARM, o que implica que não é possível rodar diretamente os softwares por desktops tradicionais de arquitetura Cisc x86. Em função desta diferença, para desenvolvimento de aplicações mobile, é necessária a utilização de um Hypervisor para que seja possível executar o sistema compatível com estes dispositivos \cite{best_mobile_processors_2022, apple_processor_spec, brief_history_qualcomm, what_are_qualcomm}.
 
 \section{Syscalls - Chamadas de sistema}
 \label{chp:referencial_teorico::sct:syscall}
@@ -77,18 +42,4 @@ O controle de grupos, também chamado de cgroups, é a ferramenta para controle 
 
 Compreendido que se trata do uso de recurso, aqueles que estão sob controle de determinado grupo, pode-se limitar o uso da CPU e utilização de blocos de I/O (entrada e saída de dados). Deste modo, determina-se quanto tempo de processamento está disponível e/ou quantos bytes estão disponíveis na entrada e saída do processo, seja ela utilização de rede (internet), escrita e leitura de arquivos, etc.
 
-\section{Containers}
-\label{chp:referencial_teorico::sct:containers}
-Os containers, basicamente utilizam recursos supracitados, para fazer o isolamento daquilo que seria disponível para o processo, em geral tratando-se de uma camada a qual não tem acesso irrestrito a recursos do SO, tais como pontos de montagem de arquivos, comunicação entre processos e entre outras funcionalidades \cite{what-container, what-are-container}.
-
-Entretanto vale ressaltar que o processo roda isolado na percepção de si próprio, mas não da SO host do container, do qual tem livre acesso a tudo do processo dentro do container. Isto deve-se a questão deste estar rodando sob o SO host de forma nativa, diferentemente do que ocorre em MVs, resultando assim em inicialização do container de forma imediata.
-
-Como visualização das diferenças entre os tipos de virtualização desde MVs a containers, temos a figura \ref{fig:container_vs_virt_t1_vs_virt_t2}.
-
-\begin{figure}
-    \centering
-    \includegraphics[width=12cm]{images/virt_container_vs_t1_vs_t2.drawio.png}
-    \caption{Container vs Virtualização tipo 1 vs tipo 2}
-    \label{fig:container_vs_virt_t1_vs_virt_t2}
-\end{figure}
-
+\input{text/desenvolvimento/referencial_teorico/virtualizacao}

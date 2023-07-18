@@ -1,0 +1,50 @@
+\section{Virtualização}
+Como início desta sessão, vamos definir virtualização como uma entidade de software da qual representa um recurso real de hardware, mas não necessariamente representando todas as capacidades deste recurso de hardware, como exemplo, digamos que exista um processador que possua 8 núcleos e 16 threads, mas a virtualização deste recurso representa apenas 4 núcleos e 8 threads deste processador real \cite{virtualizacao_and_cloud}.
+
+\paragraph*{Bases da virtualização}\mbox{}\\
+Conforme definições dadas existem alguns critérios para categorização da virtualização, sendo estes as seguintes conforme \cite{Sareen2013CloudCT, virtualizacao_and_cloud}.
+
+\paragraph*{Particionamento}\mbox{}\\
+Diversas aplicações e sistemas operacionais (SO) são suportados em um único hardware através da segregação dos recursos, sejam quais estão disponíveis ou uso destes tal como limitação no tráfego de rede.
+
+\paragraph*{Isolamento}\mbox{}\\
+Existe o isolamento do uso deste recurso de modo que, mesmo que uma máquina virtual ou container acabe quebrando e finalizando sua execução, não afetará demais aplicações.
+
+\paragraph*{Encapsulamento}\mbox{}\\
+Este previne interferência de outros sistemas com demais outros sistemas, devido toda a questão de particionamento dos recursos previamente citado. Desta forma cada ambiente possui recursos e configurações que são próprias para aquele sistema, de modo que temos o software desacoplado do hardware.
+
+
+\paragraph*{Virtualização e sandbox}\mbox{}\\
+Temos a virtualização como base do sandbox, sendo este feito através do isolamento de recursos, sejam estes limitações quanto operações, quanto quantidade de recursos.
+
+Assim sua base gira em torno de um sistema agir de modo intermediário ao hardware e definir quais seriam os recursos que estariam disponíveis para determinado programa ou SO \cite{linux-containers-virtualization}.
+
+Para o uso do conceito sandbox, existem diversas maneiras a serem feitas, e para isto, é necessário compreender algumas categorias de virtualização as quais podem ser utilizadas para seu uso final.
+
+\paragraph*{Categorização da virtualização}\mbox{}\\
+A categorização dos tipos de virtualização em alto nível, isto é sem entrar em muitos detalhes conceituais, gira em torno dos tipos de virtualização através de uma máquina virtual (MV) e a conteinerização. Para isso deve-se compreender a diferença entre estes, para que então compare-se e veja como cada um se comporta e porque de ter certas características.
+
+\input{text/desenvolvimento/referencial_teorico/maquina_virtual}
+
+\section{Containers}
+\label{chp:referencial_teorico::sct:containers}
+Já na conteinerização, o processo é mais simples por disponibilidade de alguns recursos providos pelo GNU/Linux, os quais são os Namespaces e cgroups, que possibilitam gerenciar acesso e uso de recursos sem utilização de muitas abstrações utilizadas em uma MV (criação de um driver virtual). Além de todos os processos rodarem no mesmo SO, o qual pode ser verificado na máquina host como só mais um processo na árvore de processos, diferentemente de uma MV que aponta a existência de um único processo. Mais a respeito pode ser visto no tópico.
+
+Os containers, basicamente utilizam recursos supracitados, para fazer o isolamento daquilo que seria disponível para o processo, em geral tratando-se de uma camada a qual não tem acesso irrestrito a recursos do SO, tais como pontos de montagem de arquivos, comunicação entre processos e entre outras funcionalidades \cite{what-container, what-are-container}.
+
+Entretanto vale ressaltar que o processo roda isolado na percepção de si próprio, mas não da SO host do container, do qual tem livre acesso a tudo do processo dentro do container. Isto deve-se a questão deste estar rodando sob o SO host de forma nativa, diferentemente do que ocorre em MVs, resultando assim em inicialização do container de forma imediata.
+
+Como visualização das diferenças entre os tipos de virtualização desde MVs a containers, temos a figura \ref{fig:container_vs_virt_t1_vs_virt_t2}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=11cm]{images/virt_container_vs_t1_vs_t2.drawio.png}
+    \caption{Container vs Virtualização tipo 1 vs tipo 2}
+    \label{fig:container_vs_virt_t1_vs_virt_t2}
+\end{figure}
+
+\section{Comparativo entre máquina virtual e container}
+Em questão de comparação entre estes tipos de virtualização, MV e container, como visto, estas tem características inerentes neles que provém algumas qualidades e defeitos que vão ser cruciais para entendimento de qual caso de uso é mais adequado. Desta forma, como já fora previamente discorridos os conceitos, temos a seguinte tabela comparativa como demonstrativo direto de pontos fortes e fracos de cada solução.
+
+\input{text/desenvolvimento/referencial_teorico/vm_vs_container}
+

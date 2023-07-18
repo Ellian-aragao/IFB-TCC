@@ -1,34 +1,33 @@
 \section{AppArmor}
-O AppArmor é um sistema de controle de acesso obrigatório (MAC - Mandatory Access Control) que oferece recursos de segurança adicionais ao sistema operacional Linux. Ele permite aos administradores do sistema criar políticas de segurança personalizadas para controlar o acesso de processos e aplicativos a recursos do sistema, como arquivos, diretórios, portas de rede e outros.
+É um sistema de controle de acesso obrigatório (MAC - Mandatory Access Control) o qual oferece recursos de segurança adicionais ao SO GNU/Linux. Ele permite ao administrador do sistema criar políticas de segurança para controlar o acesso de processos aos recursos do SO, tais como arquivos, diretórios, portas de rede e outros \cite{apparmor-gitlab}.
+ 
+\paragraph*{Configuração}\mbox{}\\
 
-O objetivo do AppArmor é restringir o acesso a esses recursos, limitando as ações que um processo pode realizar, a fim de evitar a execução de código malicioso ou não autorizado. Ao utilizar o AppArmor, os administradores podem criar perfis de segurança que definem as permissões e restrições para cada aplicativo em execução no sistema.
+Sua configuração envolve a definição de perfis de segurança para cada aplicativo, estes especificam recursos que aplicativo pode acessar e quais ações pode realizar. Essa configuração pode ser feita por meio de arquivos de perfil ou usando ferramentas de linha de comando fornecidas pelo AppArmor \cite{apparmor-Ubuntu-Linux-server, apparmor-gitlab}.
 
-\subsection{Configuração}
-A configuração do AppArmor envolve a definição de perfis de segurança para cada aplicativo. Esses perfis especificam quais recursos do sistema o aplicativo pode acessar e quais ações ele pode realizar. Essa configuração pode ser feita por meio de arquivos de perfil ou usando ferramentas de linha de comando fornecidas pelo AppArmor.
+Embora seja uma ferramenta poderosa, para aumentar a segurança do sistema, não é uma solução completa. Recomenda-se que os administradores de sistema adotem uma abordagem de camadas para a segurança, através da combinação do AppArmor com outras medidas de proteção, tais como atualizações regulares de segurança.
 
-Embora o AppArmor seja uma ferramenta poderosa para aumentar a segurança do sistema, é importante notar que ele não é uma solução completa. É recomendado que os administradores de sistema adotem uma abordagem em camadas para a segurança, combinando o uso do AppArmor com outras medidas de proteção, como atualizações regulares de segurança e práticas de segurança recomendadas.
+\paragraph*{Integração com Linux}\mbox{}\\
 
-\subsection{Integração com linux}
+Uma das principais características é sua integração com o kernel Linux, o qual aproveita-se dos recursos de segurança já fornecidos pelo kernel, tais como namespaces e cgroups, para isolamento dos processos. Essa abordagem garante um bom desempenho e um gasto baixo de recursos adicionais em troca da segurança \cite{hardening-linux}.
 
-Uma das principais características do AppArmor é sua integração com o kernel do Linux. Ele aproveita os recursos de segurança fornecidos pelo kernel, como namespaces e cgroups, para isolar os processos em seus próprios ambientes protegidos. Essa abordagem garante um bom desempenho e uma pegada de recursos mínima.
+\paragraph*{Gerência de perfis}\mbox{}\\
 
-\subsection{gerenciando os perfis}
+As políticas de segurança de forma granular provém seu gerenciamento uma boa flexibilidade através de perfis, representados por arquivos de configuração, definem permissões e restrições de acesso para cada processo em execução no SO.
 
-O AppArmor, no Linux, oferece um sistema flexível de gerenciamento de perfis que permite aos administradores do sistema controlar as políticas de segurança de forma granular. Os perfis são arquivos de configuração que definem as permissões e restrições de acesso para cada aplicativo ou processo em execução no sistema.
+O gerenciamento envolve três etapas principais: criação, configuração e aplicação dos perfis.
 
-No AppArmor, o gerenciamento de perfis envolve três etapas principais: criação, configuração e aplicação dos perfis.
+A criação de um perfil é a etapa em que um administrador define quais permissões e restrições são desejadas para um aplicativo específico. O perfil é descrito em uma linguagem de configuração, Profile Language (AAPL), ou usando uma abordagem baseada em aprendizado de perfil, onde o AppArmor registra as ações do aplicativo durante uma sessão de treinamento e cria um perfil com base nesses registros \cite{apparmor-gitlab}.
 
-A criação de um perfil é a etapa em que um administrador define as permissões e restrições desejadas para um aplicativo específico. O perfil é geralmente escrito em uma linguagem de configuração, como o AppArmor Profile Language (AAPL) ou usando uma abordagem baseada em aprendizado de perfil, onde o AppArmor registra as ações do aplicativo durante uma sessão de treinamento e cria um perfil com base nesses registros.
+A configuração de um perfil envolve especificar as permissões necessárias para que o aplicativo funcione corretamente. Isso pode incluir permissões para acessar arquivos, diretórios, dispositivos, sockets de rede e outras entidades do sistema \cite{apparmor-security-and-integration}.
 
-A configuração de um perfil envolve especificar as permissões necessárias para que o aplicativo funcione corretamente. Isso pode incluir permissões para acessar arquivos, diretórios, dispositivos, sockets de rede e outras entidades do sistema. As restrições também podem ser aplicadas, limitando as ações que o aplicativo pode executar, como impedir o acesso a certas partes do sistema de arquivos ou restringir o uso de recursos de rede.
+Quanto a aplicação, está é feita de forma simples através da sua interface de linha de comando, aliada a abordagem de aprendizagem, sua utilização tende a ser facilmente feita.
 
-Uma vez que o perfil tenha sido criado e configurado, ele pode ser aplicado ao aplicativo ou processo específico. O AppArmor suporta diferentes métodos de aplicação de perfil, como associar o perfil a um binário específico, atribuí-lo a um namespace ou usar as ferramentas de linha de comando do AppArmor para aplicar o perfil dinamicamente.
+Além disso, o software possui suporte a herança de perfils, onde é possível criar perfis base e perfis derivados. Os perfis derivados herdam as permissões e restrições dos perfis base, permitindo a criação de hierarquias de perfis, facilitando o gerenciamento de políticas de segurança \cite{debian-handbook}.
 
-Além disso, o AppArmor suporta o conceito de herança de perfil, onde é possível criar perfis base e perfis dependentes. Os perfis dependentes herdam as permissões e restrições dos perfis base, permitindo a criação de hierarquias de perfis que facilitam o gerenciamento de políticas de segurança em larga escala \cite{debian-handbook}.
+Destacando também fornecimento de recursos avançados de auditoria e registro de eventos, dos quais logs registram violações de segurança, permitindo a analise de comportamentos inesperados ou não previamente mapeados.
 
-É importante destacar que o AppArmor fornece recursos avançados de auditoria e registro de eventos. Os logs do AppArmor registram violações de segurança, permitindo aos administradores analisar e solucionar problemas relacionados à configuração de perfil e detectar possíveis ameaças. 
-
-\subsection{exemplos}
+\paragraph*{Exemplos}\mbox{}\\
  Considere um servidor web que executa um aplicativo da web. Podemos criar um perfil de segurança específico para esse aplicativo, limitando seu acesso apenas aos arquivos e diretórios necessários para operar corretamente. Isso restringe o impacto de um possível ataque, limitando as ações que um invasor pode realizar dentro do ambiente restrito do aplicativo.
 
-Outro exemplo é o uso do AppArmor em ambientes de desktop, onde aplicativos como navegadores da web são comumente usados. Ao aplicar perfis de segurança a esses aplicativos, podemos restringir seu acesso a informações confidenciais, como arquivos pessoais do usuário, protegendo assim a privacidade e evitando a exfiltração de dados.
+Outro exemplo é a utilização em desktops, onde a execução de programas de cunho desconhecido podem ser executadas de forma segura evitando que um malware infiltre-se no sistema.

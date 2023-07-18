@@ -1,16 +1,15 @@
 \section{Firejail}
 
-O Firejail é uma ferramenta de sandboxing que oferece um ambiente seguro para a execução de aplicativos Linux. Sua principal finalidade é isolar processos e restringir o acesso a recursos do sistema, fornecendo uma camada adicional de segurança.
+Uma ferramenta de sandboxing que oferece um ambiente seguro para a execução de aplicativos Linux. Sua principal finalidade é isolar processos e restringir o acesso a recursos do sistema, fornecendo uma camada adicional de segurança.
 
-Uma das características mais importantes do Firejail é o uso de namespaces do kernel do Linux para criar um ambiente isolado para o aplicativo. Ele utiliza namespaces como PID, rede, sistema de arquivos e usuários para separar o aplicativo em execução do restante do sistema. Isso evita que o aplicativo acesse ou modifique recursos sensíveis do sistema, reduzindo o risco de ataques maliciosos.
+Uma das características mais importantes do Firejail é o uso de namespaces do kernel do Linux para criar um ambiente isolado para o aplicativo. Ele utiliza namespaces como PID, rede, sistema de arquivos e usuários para separar o aplicativo em execução do restante do sistema. Isso evita que o aplicativo acesse ou modifique recursos sensíveis do sistema, reduzindo o risco de ataques \cite{firejail-archwiki}.
 
-O Firejail também fornece controle granular sobre as permissões de acesso do aplicativo. Por meio de perfis de segurança, os administradores podem especificar quais recursos o aplicativo pode acessar e quais ações ele pode realizar. Isso inclui restrições em acesso a arquivos, diretórios, sockets de rede, dispositivos e muito mais. Com essas permissões definidas, o Firejail garante que o aplicativo funcione somente dentro dos limites especificados.
+Ele também fornece controle granular sobre as permissões de acesso do aplicativo. Por meio de perfis de segurança, podendo especificar quais recursos o aplicativo pode acessar e quais ações ele pode realizar. Isso inclui restrições em acesso a arquivos, diretórios, sockets de rede, dispositivos e muito mais. Com essas permissões definidas, o Firejail garante que o aplicativo funcione somente dentro dos limites especificados.
 
-\section{Segurança}
-
- como a proteção contra a fuga de informações através de áreas de transferência (clipboard), prevenção de captura de tela e restringir o acesso a recursos do X11 (servidor de exibição gráfica) e Wayland. Essas medidas extras ajudam a proteger informações sensíveis e impedir que aplicativos maliciosos realizem ações indesejadas.
+\paragraph*{Segurança}\mbox{}\\
+ Como a proteção contra a fuga de informações através de áreas de transferência (clipboard), prevenção de captura de tela e restringir o acesso a recursos de servidores de exibição gráfica, tais como Xorg (X11) e Wayland. Essas medidas extras ajudam a proteger informações sensíveis e impedir que aplicativos maliciosos realizem ações indesejadas.
  
-
 Ele pode ser executado diretamente na linha de comando, envolvendo o comando do aplicativo que se deseja executar em sandbox. Também é possível criar perfis de segurança personalizados que podem ser compartilhados e reutilizados nas aplicações.
 
+\paragraph*{}\mbox{Utilização}\\
 O Firejail é frequentemente utilizado para a execução de navegadores da web, clientes de email e outros aplicativos suscetíveis a ataques. Com o Firejail, é possível mitigar o impacto de vulnerabilidades do aplicativo, limitando sua capacidade de acessar recursos do sistema e restringindo sua interação com outros processos em execução.

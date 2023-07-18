@@ -633,12 +633,13 @@ requirements for the degree of \@degree\ in \@majorfielden.
 	\@date.}\\
 
 	\hspace{0.5cm}
-		1. Palavra-chave1.
-		2. Palavra-chave2.
-		I. Orientador.
-		II. Universidade xxx.
-		III. Faculdade de xxx.
-		IV. Título\\
+		1. Sandbox.
+		2. Ferramentas de Sandbox.
+		I. Virtualização.
+		II. Container.
+		III. Máquina Virtual.
+		IV. Linux.
+        V. Segurança de Software\\
 
 	\hspace{8.75cm} CDU 004\\ % TODO: correct CDU
 
@@ -655,7 +656,7 @@ requirements for the degree of \@degree\ in \@majorfielden.
   \thispagestyle{empty}
   \noindent
   Trabalho de Graduação apresentado por \textbf{\@author} ao curso de \@majorfieldpt\
-  do \@universitypt\, sob o título \textbf{\@title}, orientado pelo \textbf{Prof. \@adviser} e aprovado pela banca examinadora formada pelos professores:
+  do \@universitypt\, sob o título \textbf{\@title}, orientado pelo \textbf{ \@adviser} e aprovado pela banca examinadora formada pelos professores:
 
   \vspace{5\baselineskip}
 

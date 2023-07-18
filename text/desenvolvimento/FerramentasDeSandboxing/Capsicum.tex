@@ -1,15 +1,15 @@
 \section{Capsicum}
 
-Ferramenta de segurança e sandboxing desenvolvida para o sistema operacional FreeBSD, embora também tenha sido portado para outros sistemas, como o Linux. Ele oferece recursos avançados de isolamento de processos e restrição de acesso, com foco na minimização de vulnerabilidades e na proteção de aplicativos contra ataques cibernéticos.
+Desenvolvida para o sistema operacional FreeBSD, embora também tenha sido portado para o Linux, oferece recursos avançados de isolamento de processos e restrição de acesso, com foco na minimização de vulnerabilidades e na proteção de aplicativos contra ataques cibernéticos \cite{freebsd-capsicum}.
 
-As principais características do Capsicum é a implementação do modelo de sandbox baseado em recursos, que permite aos desenvolvedores restringir o acesso de aplicativos somente aos recursos necessários para sua execução. Isso é alcançado através do conceito de "capabilidades" (capabilities), que são permissões granulares que um processo pode ter para acessar recursos do sistema. O Capsicum permite que os desenvolvedores reduzam essas capabilidades para um processo, limitando assim seu poder e evitando a exploração de vulnerabilidades.
+As principais características do Capsicum é a implementação do modelo de sandbox baseado em recursos, que permite aos desenvolvedores restringir o acesso de aplicativos somente aos recursos necessários para sua execução. Através do conceito de capacidades (capabilities), que são permissões granulares que um processo pode ter para acessar recursos do sistema, ele permite que os desenvolvedores limitando assim seu acesso ao host evitando a exploração de vulnerabilidades que podem existir \cite{linux-security-redhat}.
 
-\subsection{Separação de contexto}
+\paragraph*{Separação de contexto}\mbox{}\\
 
-Tendo a separação de contexto, que é alcançada através do uso de descritores de arquivos e recursos encapsulados chamados "sandbox". Essa separação de contexto permite que um processo tenha acesso somente a um subconjunto específico de recursos, limitando sua capacidade de interagir com outros processos ou modificar recursos não autorizados.
+É alcançada através do uso de descritores de arquivos e recursos encapsulados chamados "sandbox", permite que um processo tenha acesso somente a um subconjunto específico de recursos, limitando sua capacidade de interagir com outros processos ou modificar recursos não autorizados.
 
-Suporta o uso de descritores de arquivos com limitação de escopo, onde um processo pode restringir o acesso a um conjunto específico de descritores de arquivos. Isso ajuda a prevenir a escalada de privilégios, impedindo que um processo acesse outros arquivos ou recursos além dos permitidos.
+Suporta o uso de descritores de arquivos com limitação de escopo, onde um processo pode restringir o acesso a um conjunto específico de descritores de arquivos, o que previne a escalada de privilégios, impedindo que um processo acesse outros arquivos ou recursos além dos permitidos.
 
-\subsection{exemplos}
+\paragraph*{Exemplo}\mbox{}\\
 
 Uma aplicação prática do Capsicum é a proteção de aplicativos com vários componentes que precisam interagir entre si, mas sem expor todos os recursos do sistema a cada componente. Com o Capsicum, é possível definir capabilidades específicas para cada componente, limitando assim seu acesso a recursos específicos e reduzindo o impacto caso algum componente seja comprometido.

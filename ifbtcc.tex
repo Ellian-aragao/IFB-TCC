@@ -1,4 +1,4 @@
-t%% IFBTcc Latex Template Version
+%% IFBTcc Latex Template Version
 %% 	based on a fork of : RiSE Latex Template
 %%
 %% IFBthesis latex template for thesis and dissertations
@@ -109,10 +109,10 @@ t%% IFBTcc Latex Template Version
   
   \campus{Campus Taguatinga}
   
-  \majorfieldpt{Bacharelado em Ciência da Computação}
+  \majorfieldpt{Ciência da Computação}
   \majorfielden{Computer Science}
   
-  \title{Comparação de ferramentas de sandboxing em sistemas GNU/Linux}
+  \title{Estudo e análise de ferramentas sandboxing em sistemas GNU/Linux}
   
   \date{2023}
   
@@ -142,21 +142,19 @@ t%% IFBTcc Latex Template Version
   % Obrigado a todos que acreditaram que eu poderia ser um belo garoto de programa
   % \end{dedicatory}
   
-  \acknowledgements
+  % \acknowledgements
   % \input{text/agradecimentos}
   
-  \begin{epigraph}{Mark Kennedy}
-  Todas as maiores invenções tecnológicas criadas pelo homem — o avião, o automóvel, o computador — dizem pouco sobre sua inteligência, mas falam bastante sobre sua preguiça
-  \end{epigraph}
+  % \begin{epigraph}{Mark Kennedy}
+  % Todas as maiores invenções tecnológicas criadas pelo homem — o avião, o automóvel, o computador — dizem pouco sobre sua inteligência, mas falam bastante sobre sua preguiça
+  % \end{epigraph}
   
   \resumo
-  % Escreva seu resumo no arquivo resumo.tex
   {\parindent0pt
     \input{text/resumo}
   }
   
   \abstract
-  % Write your abstract in a file called abstract.tex
   {\parindent0pt
     \input{text/abstract}
   }
@@ -181,19 +179,10 @@ t%% IFBTcc Latex Template Version
   \mainmatter
   
   \include{text/introducao}
-  \include{text/objetivo}
   \include{text/desenvolvimento}
-  
-  {\parindent0pt
-    \input{text/cronograma}
-  }
-
-  {\parindent0pt
-    \input{text/conclusao}
-  }
-  
-  % References
-  
+  %{\parindent0pt
+   % \input{text/conclusao}
+  %}
   \begin{references}
     \bibliography{bib/referencias}
   \end{references}
